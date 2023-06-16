@@ -22,6 +22,8 @@ int main()
 
     interception_set_filter(ctx, interception_is_mouse, INTERCEPTION_FILTER_MOUSE_MOVE);
 
+    POINT p;
+
     while (true)
     {
         int nstroke = interception_receive(ctx, device = interception_wait(ctx), &stroke, 1);
@@ -58,6 +60,9 @@ int main()
             first = false;
         }
         std::cout << "], x : " << mstroke.x << ", y : " << mstroke.y << " }" << std::endl;
+
+        GetCursorPos(&p);
+        std::cout << "CursorPos : (" << p.x << ", " << p.y << ")" << std::endl;
 
         interception_send(ctx, device, &stroke, 1);
     }

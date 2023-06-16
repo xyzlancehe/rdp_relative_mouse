@@ -1,6 +1,6 @@
 # RDP Relative Mouse
 
->  This page is mostly translated by machine.
+> This page is mostly translated by machine.
 
 RDP only sends the absolute position of the mouse, which makes it impossible to operate a 3D game (unable to rotate the perspective) that depends on the relative displacement of the mouse, such as Genshin Impact, in the remote desktop.
 
@@ -23,7 +23,7 @@ This program uses the [Interception library](https://github.com/oblitum/Intercep
 
   ```
 
-  ./install intercept. exe/install
+  ./install-interception.exe /install
 
   ```
 
@@ -35,7 +35,7 @@ This program uses the [Interception library](https://github.com/oblitum/Intercep
 
   Copy 'interception.dll' to the directory of 'exe' or add it to 'path'.
 
-  + `mouse_ info.exe`
+  + `mouse_info.exe`
 
     Running this program will output real-time mouse movement information in the terminal.
 
@@ -55,7 +55,7 @@ This program uses the [Interception library](https://github.com/oblitum/Intercep
 
     This program should run when logging in through remote desktop. After the program starts, it will begin to take over the mouse movement of the remote host and attach relative displacement to it. And it will also generate relative displacement when the mouse is at the boundary. Close the program to stop taking over.
 
-    Some configurations will be loaded during startup and can be modified in `config. ini`.
+    Some configurations will be loaded during startup and can be modified in `config.ini`.
 + Configuration
 
   This program allows remote desktops to operate some games, but there are still some differences in the feel compared to local games. The main issue is when the local mouse moves to the boundary (which may not be visible within the game). At this point, if you continue to move outside the boundary, you will see:
@@ -78,7 +78,7 @@ This program uses the [Interception library](https://github.com/oblitum/Intercep
 
     This scheme will generate some automatic operations, which may differ from the intuition of local operations, but if the parameters are configured properly, it is relatively stable.
 
-  Neither solution is perfect. In addition, they all have some parameters that can be configured in 'config. ini' to determine the movement speed at the boundary. You can experience both options and adjust the speed parameters according to the actual situation to find the most suitable solution.
+  Neither solution is perfect. In addition, they all have some parameters that can be configured in `config.ini` to determine the movement speed at the boundary. You can experience both options and adjust the speed parameters according to the actual situation to find the most suitable solution.
 
 The configurable parameters are as follows:
 
@@ -90,11 +90,11 @@ The configurable parameters are as follows:
 
 xMin = 17
 
-xXMax = 65566
+xMax = 65566
 
-xYMin = 30
+yMin = 30
 
-xMax = 65555
+yMax = 65555
 
 
 #main configurations
@@ -102,7 +102,7 @@ xMax = 65555
 
 factor = 1.0 # velocity factor at non boundary points
 
-mode = 0 # The mode at the boundary, where 0 indicates manual tilting movement and 1 indicates automatic movement
+mode = 0 # The mode at the boundary, where 0 indicates manual movement and 1 indicates automatic movement
 
 
 
