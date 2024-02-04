@@ -1,4 +1,3 @@
-build/
-.vscode/
-
-**/config.ini
+build
+*.pdb
+Debug
